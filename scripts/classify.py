@@ -51,6 +51,7 @@ def preprocess_text(raw_text):
     text = remove_url(text)
     text = remove_noise_symbols(text)
     text = remove_stopwords(text)
+    text = text.lower()       # use lowercase sentences
     return text
 
 """
