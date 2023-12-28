@@ -1,5 +1,7 @@
 # Text Classification: Hate Speech Detection
 
+### [Download Dataset](https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset)
+
 ## Dependencies
 Activate virtual environment then install following commands:
 ```bash
