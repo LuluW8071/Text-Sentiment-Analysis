@@ -2,7 +2,6 @@ import json
 import re
 import nltk
 from nltk.corpus import stopwords
-import pandas as pd
 import os
 import random
 import csv
@@ -113,7 +112,7 @@ if __name__ == "__main__":
                         help="Path to the input CSV file.")
     parser.add_argument("--save_json_path", type=str, required=True,
                         help="Path to the directory for saving JSON files.")
-    parser.add_argument("--percent", type=float, default=0.5,
+    parser.add_argument("--percent", type=float, default=10,
                         help="Percentage for some operation.")
     parser.add_argument("--convert", action="store_true",
                         help="Flag to enable conversion operation.")
