@@ -1,15 +1,6 @@
-# Text Classification: Hate Speech Detection
+# Hate Speech Detection using LSTM & Bidirectional LSTM
 
 ### [Download Dataset](https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset)
 
-## Dependencies
-Activate virtual environment then install following commands:
-```bash
-pip install -r requirements.txt
-```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LuluW8071/Text-Classification/blob/main/Hate_Speech_Detection.ipynb)
 
-## Terminal Commands
-Use `classify.py` to preprocess the tweets and to create train and test JSON</br>
-```bash
-py classify.py --file_path "file_path\to\.csv" --save_json_path "save\json\path" --percent 10 --convert
-```
