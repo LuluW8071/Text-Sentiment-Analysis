@@ -1,7 +1,6 @@
 # Hate Speech Detection using LSTM & Bidirectional LSTM
 
-### [Download Dataset](https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset) <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/7b282ec6-fcc3-4600-90a7-2c3140549f58" width="250" align="right"> 
-
+### [Download Dataset](https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset) <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/7b282ec6-fcc3-4600-90a7-2c3140549f58" width="150" align="right"> 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LuluW8071/Text-Classification/blob/main/Hate_Speech_Detection.ipynb) 
 <br>
