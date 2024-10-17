@@ -1,4 +1,5 @@
 import re
+import pandas as pd
 import numpy as np
 import tqdm
 import torch
@@ -37,7 +38,7 @@ def preprocess_text(text):
 
 
 def embed(docs):
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load('en_core_web_md')
     docs_tensor = []
     pbar = tqdm.trange(docs.shape[0])
     for t in pbar:
@@ -47,5 +48,5 @@ def embed(docs):
 
     docs_tensor = [torch.tensor(np.array(d)) for d in docs_tensor]
     docs_tensor = pad_sequence(docs_tensor, batch_first=True)
-
+    # print(docs_tensor.shape)
     return docs_tensor
