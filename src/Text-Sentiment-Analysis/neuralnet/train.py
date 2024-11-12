@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     # Model parameter
     parser.add_argument("--model", type=str, default="gru", help="Model selection (default: GRU)") 
-    parser.add_argument("--bidirectional", "-bi", type=bool, default=True, help="Bidirectional status (default: True)") 
+    parser.add_argument("--bidirectional", "-bi", type=bool, default=False, help="Bidirectional status (default: True)") 
     parser.add_argument("--dropout", type=float, default=0.2, help="Dropout rate (default: 0.2)")
     parser.add_argument("--hidden_units", type=int, default=128, help="Number of hidden units in LSTM (default: 128)")
     parser.add_argument("--num_layers", type=int, default=2, help="Number of LSTM layers (default: 2)")
