@@ -16,7 +16,7 @@ This repository implements and compares various deep learning models for sentime
 | Model            | Best Epoch | Train Loss | Test Loss | Train Acc | Test Acc |
 |------------------|------------|------------|-----------|-----------|----------|
 | LSTM + Attention | 13         | 0.2499     | 0.344    | 0.8986    | 0.8572  |   
-| **BiLSTM + Attention* | **6**        | **0.286**     | **0.3349**    | **0.8795**    | **0.8624**   |
+| **BiLSTM + Attention** | **6**        | **0.286**     | **0.3349**    | **0.8795**    | **0.8624**   |
 | GRU + Attention  | 12        | 0.2514     | 0.3289    | 0.8972    | 0.8522   |
 | BiGRU + Attention  | 8         | 0.2433     | 0.3672    | 0.8998    | 0.8535   |
 
