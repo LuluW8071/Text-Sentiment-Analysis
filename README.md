@@ -1,24 +1,52 @@
-# Text Sentiment Analysis using BERT & LSTM
+# Text Sentiment Analysis with Sequential Models, Additive Attention, and Transformers
 
-<img src = "https://imerit.net/wp-content/uploads/2021/07/what-is-sentiment-analysis.jpg">
+<img src="https://imerit.net/wp-content/uploads/2021/07/what-is-sentiment-analysis.jpg" alt="Sentiment Analysis">
 
-**Sentiment analysis** is an NLP technique to classify the sentiment (_positive_, _negative_, or _neutral_) of text data. It involves processing textual input, classifying sentiment using techniques like lexicon-based, machine learning, or deep learning models, and has applications in business, social media monitoring, finance, and healthcare. It helps understand public sentiment, customer satisfaction, and market trends.
+**Sentiment Analysis** is a Natural Language Processing (NLP) technique used to classify the sentiment of text data as _positive_, _negative_, or _neutral_. It involves processing textual input and classifying sentiment using methods such as lexicon-based approaches, machine learning, or deep learning models. This technique has applications in areas like business, social media monitoring, finance, and healthcare, enabling insights into public sentiment, customer satisfaction, and market trends.
 
-### [Download Dataset](https://drive.usercontent.google.com/download?id=1Jp3D5gdxGrwa5dHbr4p-pECrD8wi7vik&authuser=0)
+This repository implements and compares various deep learning models for sentiment analysis, including:
+- Sequential models with additive attention mechanisms.
+- Fine-tuning Transformer models for binary and multi-class sentiment classification.
 
-### Text Sentiment Analysis using BERT
+## Binary Text Sentiment Analysis
 
-<img src = "https://i0.wp.com/neptune.ai/wp-content/uploads/2022/10/Attention_diagram_transformer.png?ssl=1">
+> [!NOTE]
+> `Custom Embeddings` using the train dataset vocabulary were used for this experiment.   
 
-**BERT** is pre-trained on a large text corpus using tasks like masked language modeling and next sentence prediction. Fine-tuning on specific tasks involves adjusting the final layers of the pre-trained BERT model which allows us to adapt it to specific NLP tasks such as **text classification**, **named entity recognition**, **sentiment analysis**, and **question answering**.
+| Model            | Best Epoch | Train Loss | Test Loss | Train Acc | Test Acc |
+|------------------|------------|------------|-----------|-----------|----------|
+| LSTM + Attention | 13         | 0.2499     | 0.344    | 0.8986    | 0.8572  |   
+| **BiLSTM + Attention* | **6**        | **0.286**     | **0.3349**    | **0.8795**    | **0.8624**   |
+| GRU + Attention  | 12        | 0.2514     | 0.3289    | 0.8972    | 0.8522   |
+| BiGRU + Attention  | 8         | 0.2433     | 0.3672    | 0.8998    | 0.8535   |
 
-### Text Sentiment Analysis using LSTM
+### Confusion Matrix
 
-For LSTM Model, the **Embedding Layer** converts tokens into **dense vectors** to capture word **similarities**. The **LSTM Layer** processes **sequences**, maintaining **hidden states** for **long-term dependencies**. A **Dropout Layer** prevents **overfitting** by randomly setting input units to **zero**. The **Fully Connected Layer** transforms LSTM output, and a **Sigmoid Activation Function** squashes values to predict **sentiment probabilities**. This architecture effectively analyzes text for **sentiment classification**.
+| LSTM + Attention | BiLSTM + Attention | GRU + Attention |BiGRU + Attention |
+|------------------|------------|------------|-----------|
+| ![conf_mat1](assets/binary_lstm+attention.png) | ![conf_mat1](assets/binary_bilstm+attention.png) | ![conf_mat1](assets/binary_gru+attention.png)  |![conf_mat1](assets/binary_bigru+attention.png) |
 
-<img src = "assets/LSTM-Model.png">
+## MultiClass Text Sentiment Analysis
 
->Note: Above image is not correct representation of LSTM model defined in my notebook. It is just a representation of how LSTM works on text sentiment analysis. 
+> [!NOTE]
+> `Small Spacy Embeddings` were used for this experiment. 
+
+| Model            | Best Epoch | Train Loss | Test Loss | Train Acc | Test Acc |
+|------------------|------------|------------|-----------|-----------|----------|
+| LSTM + Attention | 23         | 0.5530     | 0.7040    | 0.7748    | 0.7124   |
+| BiLSTM + Attention | 14       | 0.5572     | 0.6687    | 0.7680    | 0.7235   |
+| GRU + Attention  | 21         | 0.5742     | 0.6618    | 0.7629    | 0.7250   |
+| **BiGRU + Attention** | **22**        | **0.5099**     | **0.6593**    | **0.7893**    | **0.7335**   |
+
+### Confusion Matrix
+
+| LSTM + Attention | BiLSTM + Attention | GRU + Attention |BiGRU + Attention |
+|------------------|------------|------------|-----------|
+| ![conf_mat1](assets/lstm+attention.png) | ![conf_mat1](assets/bilstm+attention.png) | ![conf_mat1](assets/gru+attention.png)  |![conf_mat1](assets/bigru+attention.png) |
+
+> [!NOTE]
+> All the experiments metrics are logged and each trained model and vocab files are uploaded under __Assets & Artifacts tab__ to Comet-ML.
+> [__Link__](https://www.comet.com/luluw8071/tweet-sentiment-analysis/view/new/panels)
 
 ---
 Feel free to send issues if you face any problem.</br>
