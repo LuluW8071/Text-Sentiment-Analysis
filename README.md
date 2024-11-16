@@ -1,10 +1,30 @@
-# Text Sentiment Analysis using Sequential Networks with Additive Attention & Transformers
+# Text Sentiment Analysis with Sequential Models, Additive Attention, and Transformers
 
-<img src = "https://imerit.net/wp-content/uploads/2021/07/what-is-sentiment-analysis.jpg">
+<img src="https://imerit.net/wp-content/uploads/2021/07/what-is-sentiment-analysis.jpg" alt="Sentiment Analysis">
 
-**Sentiment analysis** is an NLP technique to classify the sentiment (_positive_, _negative_, or _neutral_) of text data. It involves processing textual input, classifying sentiment using techniques like lexicon-based, machine learning, or deep learning models, and has applications in business, social media monitoring, finance, and healthcare. It helps understand public sentiment, customer satisfaction, and market trends.
+**Sentiment Analysis** is a Natural Language Processing (NLP) technique used to classify the sentiment of text data as _positive_, _negative_, or _neutral_. It involves processing textual input and classifying sentiment using methods such as lexicon-based approaches, machine learning, or deep learning models. This technique has applications in areas like business, social media monitoring, finance, and healthcare, enabling insights into public sentiment, customer satisfaction, and market trends.
+
+This repository implements and compares various deep learning models for sentiment analysis, including:
+- Sequential models with additive attention mechanisms.
+- Fine-tuning Transformer models for binary and multi-class sentiment classification.
 
 ## Binary Text Sentiment Analysis
+
+> [!NOTE]
+> `Custom Embeddings` using the train dataset vocabulary were used for this experiment.   
+
+| Model            | Best Epoch | Train Loss | Test Loss | Train Acc | Test Acc |
+|------------------|------------|------------|-----------|-----------|----------|
+| LSTM + Attention | 13         | 0.2499     | 0.344    | 0.8986    | 0.8572  |   
+| **BiLSTM + Attention* | **6**        | **0.286**     | **0.3349**    | **0.8795**    | **0.8624**   |
+| GRU + Attention  | 12        | 0.2514     | 0.3289    | 0.8972    | 0.8522   |
+| BiGRU + Attention  | 8         | 0.2433     | 0.3672    | 0.8998    | 0.8535   |
+
+### Confusion Matrix
+
+| LSTM + Attention | BiLSTM + Attention | GRU + Attention |BiGRU + Attention |
+|------------------|------------|------------|-----------|
+| ![conf_mat1](assets/binary_lstm+attention.png) | ![conf_mat1](assets/binary_bilstm+attention.png) | ![conf_mat1](assets/binary_gru+attention.png)  |![conf_mat1](assets/binary_bigru+attention.png) |
 
 ## MultiClass Text Sentiment Analysis
 
@@ -24,9 +44,9 @@
 |------------------|------------|------------|-----------|
 | ![conf_mat1](assets/lstm+attention.png) | ![conf_mat1](assets/bilstm+attention.png) | ![conf_mat1](assets/gru+attention.png)  |![conf_mat1](assets/bigru+attention.png) |
 
-
-
-
+> [!NOTE]
+> All the experiments metrics are logged and each trained model and vocab files are uploaded under __Assets & Artifacts tab__ to Comet-ML.
+> [__Link__](https://www.comet.com/luluw8071/tweet-sentiment-analysis/view/new/panels)
 
 ---
 Feel free to send issues if you face any problem.</br>
