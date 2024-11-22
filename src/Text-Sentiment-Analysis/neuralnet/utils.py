@@ -1,4 +1,5 @@
 import re
+import subprocess
 import pandas as pd
 import numpy as np
 import tqdm
@@ -36,9 +37,22 @@ def preprocess_text(text):
 
     return text.strip()
 
+# Function to check and load the spaCy model
+def load_spacy_model(model_name="en_core_web_sm"):
+    try:
+        nlp = spacy.load(model_name)
+        return nlp
+    except OSError:
+        print(f"{model_name} not found. Downloading it now...")
+        subprocess.run(
+            ["python", "-m", "spacy", "download", model_name, "--quiet"], check=True
+        )
+        nlp = spacy.load(model_name)
+        return nlp
 
 def embed(docs):
-    nlp = spacy.load('en_core_web_md')
+    # Load spaCy model (download if needed)
+    nlp = load_spacy_model("en_core_web_sm")
     docs_tensor = []
     pbar = tqdm.trange(docs.shape[0])
     for t in pbar:
@@ -50,3 +64,5 @@ def embed(docs):
     docs_tensor = pad_sequence(docs_tensor, batch_first=True)
     # print(docs_tensor.shape)
     return docs_tensor
+
+
