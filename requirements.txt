@@ -1,0 +1,6 @@
+torch
+streamlit
+onnx
+onnxruntime
+numpy
+nltk
