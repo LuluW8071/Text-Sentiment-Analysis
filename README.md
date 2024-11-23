@@ -5,14 +5,14 @@
 **Sentiment Analysis** is a Natural Language Processing (NLP) technique used to classify the sentiment of text data as _positive_, _negative_, or _neutral_. It involves processing textual input and classifying sentiment using methods such as lexicon-based approaches, machine learning, or deep learning models. This technique has applications in areas like business, social media monitoring, finance, and healthcare, enabling insights into public sentiment, customer satisfaction, and market trends.
 
 This repository implements and compares various deep learning models for sentiment analysis, including:
-- Sequential __RNN based models with additive attention__ mechanisms.
+- Sequential __RNN based models with additive attention__ mechanisms
 - Fine-tuning __Transformer models__ 
 
 for binary and multi-class sentiment classification.
 
 ## Binary Text Sentiment Analysis
 
-> **[!NOTE]**  
+> [!NOTE] 
 > Custom embeddings using the training dataset vocabulary were employed for this RNN-based model experiment.  
 > Total epochs trained: `15` (RNN) & `5` (Transformer). The best model was chosen based on test accuracy.  
 
