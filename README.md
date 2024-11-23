@@ -10,6 +10,8 @@ This repository implements and compares various deep learning models for sentime
 
 for binary and multi-class sentiment classification.
 
+> Deployed the **LSTM + Attention** trained on larger dataset in streamlit.[**Click here**](https://sentimentsense.streamlit.app/) to try it out.
+
 ## Binary Text Sentiment Analysis
 
 > [!NOTE] 
@@ -27,6 +29,8 @@ for binary and multi-class sentiment classification.
 |------------------|------------|------------|-----------|-----------|----------|
 | **LSTM + Attention** | **8**        | **0.1783**     | **0.2223**     | **0.9228**   | **0.9086**  |
 | GRU + Attention  | 7        | 0.1857     | 0.2225    | 0.8972    | 0.9079   |
+
+
 
 |  Transformer Models | Best Epoch | Train Loss | Test Loss |Test Acc |
 |------------------|------------|------------|-----------|-----------|
